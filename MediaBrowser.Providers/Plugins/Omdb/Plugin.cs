@@ -28,9 +28,9 @@ namespace MediaBrowser.Providers.Plugins.Omdb
         public override string Description => "Get metadata for movies and other video content from OMDb.";
 
         // TODO remove when plugin removed from server.
-        public override string ConfigurationFileName => "Jellyfin.Plugin.Omdb.xml";
+        public override string ConfigurationFileName => "NetStream.Plugin.Omdb.xml";
 
-        public string ImageResourceName => GetType().Namespace + ".jellyfin-plugin-omdb.png";
+        public string ImageResourceName => GetType().Namespace + ".netstream-plugin-omdb.png";
 
         public IEnumerable<PluginPageInfo> GetPages()
         {

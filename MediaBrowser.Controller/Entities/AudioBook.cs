@@ -4,7 +4,7 @@
 
 using System;
 using System.Text.Json.Serialization;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 using MediaBrowser.Controller.Providers;
 
 namespace MediaBrowser.Controller.Entities

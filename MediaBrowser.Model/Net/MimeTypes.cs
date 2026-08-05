@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Mime;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 
 namespace MediaBrowser.Model.Net
 {

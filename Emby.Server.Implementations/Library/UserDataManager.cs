@@ -6,8 +6,8 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using BitFaster.Caching.Lru;
-using Jellyfin.Database.Implementations;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Database.Implementations;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Controller.Dto;
 using MediaBrowser.Controller.Entities;
@@ -26,17 +26,17 @@ namespace Emby.Server.Implementations.Library
     public class UserDataManager : IUserDataManager
     {
         private readonly IServerConfigurationManager _config;
-        private readonly IDbContextFactory<JellyfinDbContext> _repository;
+        private readonly IDbContextFactory<NetStreamDbContext> _repository;
         private readonly FastConcurrentLru<string, UserItemData> _cache;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserDataManager"/> class.
         /// </summary>
         /// <param name="config">Instance of the <see cref="IServerConfigurationManager"/> interface.</param>
-        /// <param name="repository">Instance of the <see cref="IDbContextFactory{JellyfinDbContext}"/> interface.</param>
+        /// <param name="repository">Instance of the <see cref="IDbContextFactory{NetStreamDbContext}"/> interface.</param>
         public UserDataManager(
             IServerConfigurationManager config,
-            IDbContextFactory<JellyfinDbContext> repository)
+            IDbContextFactory<NetStreamDbContext> repository)
         {
             _config = config;
             _repository = repository;
@@ -287,7 +287,7 @@ namespace Emby.Server.Implementations.Library
             {
                 using var dbContext = _repository.CreateDbContext();
                 withLocalAlternates = dbContext.LinkedChildren
-                    .Where(lc => lc.ChildType == Jellyfin.Database.Implementations.Entities.LinkedChildType.LocalAlternateVersion)
+                    .Where(lc => lc.ChildType == NetStream.Database.Implementations.Entities.LinkedChildType.LocalAlternateVersion)
                     .WhereOneOrMany(localProbeIds, lc => lc.ParentId)
                     .Select(lc => lc.ParentId)
                     .Distinct()

@@ -853,7 +853,7 @@ namespace MediaBrowser.MediaEncoding.Subtitles
         /// </summary>
         /// <remarks>
         /// stdin is redirected and closed, and <c>-nostdin</c> is prepended to the arguments, so ffmpeg can never
-        /// block reading an inherited stdin handle (which happens when Jellyfin runs as a service, e.g. under NSSM,
+        /// block reading an inherited stdin handle (which happens when NetStream runs as a service, e.g. under NSSM,
         /// and stalls subtitle extraction until the timeout). stderr is redirected and drained so a full pipe buffer
         /// cannot deadlock ffmpeg and so its output can be surfaced on failure; stdout is left un-redirected as it is
         /// unused for subtitle extraction.

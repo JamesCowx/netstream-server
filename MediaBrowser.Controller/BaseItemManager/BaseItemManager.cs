@@ -1,5 +1,5 @@
 using System;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Channels;
 using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Controller.Entities;

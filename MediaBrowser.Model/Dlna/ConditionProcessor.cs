@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
-using Jellyfin.Data.Enums;
-using Jellyfin.Extensions;
+using NetStream.Data.Enums;
+using NetStream.Extensions;
 using MediaBrowser.Model.MediaInfo;
 
 namespace MediaBrowser.Model.Dlna

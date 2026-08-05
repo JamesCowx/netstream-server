@@ -1,4 +1,4 @@
-using Jellyfin.Data.Events;
+using NetStream.Data.Events;
 using MediaBrowser.Model.Plugins;
 
 namespace MediaBrowser.Controller.Events.Updates

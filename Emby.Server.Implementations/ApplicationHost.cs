@@ -38,17 +38,17 @@ using Emby.Server.Implementations.Session;
 using Emby.Server.Implementations.SyncPlay;
 using Emby.Server.Implementations.TV;
 using Emby.Server.Implementations.Updates;
-using Jellyfin.Api.Helpers;
-using Jellyfin.Data;
-using Jellyfin.Database.Implementations.Enums;
-using Jellyfin.Drawing;
-using Jellyfin.MediaEncoding.Hls.Playlist;
-using Jellyfin.Networking.Manager;
-using Jellyfin.Networking.Udp;
-using Jellyfin.Server.Implementations.FullSystemBackup;
-using Jellyfin.Server.Implementations.Item;
-using Jellyfin.Server.Implementations.MediaSegments;
-using Jellyfin.Server.Implementations.SystemBackupService;
+using NetStream.Api.Helpers;
+using NetStream.Data;
+using NetStream.Database.Implementations.Enums;
+using NetStream.Drawing;
+using NetStream.MediaEncoding.Hls.Playlist;
+using NetStream.Networking.Manager;
+using NetStream.Networking.Udp;
+using NetStream.Server.Implementations.FullSystemBackup;
+using NetStream.Server.Implementations.Item;
+using NetStream.Server.Implementations.MediaSegments;
+using NetStream.Server.Implementations.SystemBackupService;
 using MediaBrowser.Common;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Events;
@@ -256,7 +256,7 @@ namespace Emby.Server.Implementations
         /// Gets the email address for use within a comment section of a user agent field.
         /// Presently used to provide contact information to MusicBrainz service.
         /// </summary>
-        public string ApplicationUserAgentAddress => "team@jellyfin.org";
+        public string ApplicationUserAgentAddress => "team@netstream.org";
 
         /// <summary>
         /// Gets the current application name.

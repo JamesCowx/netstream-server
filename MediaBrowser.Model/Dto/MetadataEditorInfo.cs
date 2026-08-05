@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Globalization;
 using MediaBrowser.Model.Providers;

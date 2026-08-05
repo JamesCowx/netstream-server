@@ -5,7 +5,7 @@
 using System;
 using System.IO;
 using System.Linq;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 using MediaBrowser.Controller;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;

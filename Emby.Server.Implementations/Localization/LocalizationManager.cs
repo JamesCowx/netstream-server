@@ -9,8 +9,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Jellyfin.Extensions;
-using Jellyfin.Extensions.Json;
+using NetStream.Extensions;
+using NetStream.Extensions.Json;
 using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Globalization;
@@ -43,13 +43,13 @@ namespace Emby.Server.Implementations.Localization
         private readonly ConcurrentDictionary<string, CultureDto?> _cultureCache = new(StringComparer.OrdinalIgnoreCase);
         private List<CultureDto> _cultures = [];
 
-        private static readonly (IReadOnlyList<LocalizationOption> Options, FrozenDictionary<string, string> Bcp47ToJellyfinMap) _localizationData = BuildLocalizationData();
+        private static readonly (IReadOnlyList<LocalizationOption> Options, FrozenDictionary<string, string> Bcp47ToNetStreamMap) _localizationData = BuildLocalizationData();
         private static readonly IReadOnlyList<LocalizationOption> _localizationOptions = _localizationData.Options;
 
         // Maps BCP-47 hyphenated culture codes (set by ASP.NET Core's RequestLocalizationMiddleware
-        // and used as CurrentUICulture.Name) to Jellyfin's underscore-based resource file codes.
+        // and used as CurrentUICulture.Name) to NetStream's underscore-based resource file codes.
         // Built reflexively from the resource file scan so both directions stay in sync.
-        private static readonly FrozenDictionary<string, string> _bcp47ToJellyfinMap = _localizationData.Bcp47ToJellyfinMap;
+        private static readonly FrozenDictionary<string, string> _bcp47ToNetStreamMap = _localizationData.Bcp47ToNetStreamMap;
 
         private FrozenDictionary<string, string> _iso6392BtoT = null!;
 
@@ -88,7 +88,7 @@ namespace Emby.Server.Implementations.Localization
         }
 
         /// <summary>
-        /// Resolves a Jellyfin resource culture code (which may use underscores, e.g. <c>es_419</c>)
+        /// Resolves a NetStream resource culture code (which may use underscores, e.g. <c>es_419</c>)
         /// to a <see cref="CultureInfo"/>. Returns <see langword="false"/> for codes .NET cannot resolve.
         /// </summary>
         private static bool TryGetCultureInfo(string cultureCode, [NotNullWhen(true)] out CultureInfo? cultureInfo)
@@ -563,8 +563,8 @@ namespace Emby.Server.Implementations.Localization
                 culture = DefaultCulture;
             }
 
-            // Normalize BCP-47 hyphenated codes to Jellyfin's underscore-based codes
-            if (_bcp47ToJellyfinMap.TryGetValue(culture, out var mapped))
+            // Normalize BCP-47 hyphenated codes to NetStream's underscore-based codes
+            if (_bcp47ToNetStreamMap.TryGetValue(culture, out var mapped))
             {
                 culture = mapped;
             }
@@ -648,7 +648,7 @@ namespace Emby.Server.Implementations.Localization
             return _localizationOptions;
         }
 
-        private static (IReadOnlyList<LocalizationOption> Options, FrozenDictionary<string, string> Bcp47ToJellyfinMap) BuildLocalizationData()
+        private static (IReadOnlyList<LocalizationOption> Options, FrozenDictionary<string, string> Bcp47ToNetStreamMap) BuildLocalizationData()
         {
             var options = new List<LocalizationOption>();
             var bcp47Map = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -665,7 +665,7 @@ namespace Emby.Server.Implementations.Localization
                 // Extract culture code from resource name: "...Core.de.json" -> "de", "...Core.pt-BR.json" -> "pt-BR"
                 var code = resource[prefix.Length..^5];
 
-                // Record the BCP-47 → Jellyfin mapping for any resource file using underscores.
+                // Record the BCP-47 → NetStream mapping for any resource file using underscores.
                 if (code.Contains('_', StringComparison.Ordinal))
                 {
                     bcp47Map[code.Replace('_', '-')] = code;

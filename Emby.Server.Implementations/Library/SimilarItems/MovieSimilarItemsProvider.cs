@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations;
-using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Extensions;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations;
+using NetStream.Database.Implementations.Entities;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Controller.Dto;
 using MediaBrowser.Controller.Entities;
@@ -50,7 +50,7 @@ public sealed class MovieSimilarItemsProvider : ILocalSimilarItemsProvider<Movie
 
     private static readonly string[] _scoredPersonTypes = [.. _personTypeWeights.Keys];
 
-    private readonly IDbContextFactory<JellyfinDbContext> _dbProvider;
+    private readonly IDbContextFactory<NetStreamDbContext> _dbProvider;
     private readonly IItemQueryHelpers _queryHelpers;
     private readonly IServerConfigurationManager _serverConfigurationManager;
     private readonly ILibraryManager _libraryManager;
@@ -63,7 +63,7 @@ public sealed class MovieSimilarItemsProvider : ILocalSimilarItemsProvider<Movie
     /// <param name="serverConfigurationManager">The server configuration manager.</param>
     /// <param name="libraryManager">The library manager.</param>
     public MovieSimilarItemsProvider(
-        IDbContextFactory<JellyfinDbContext> dbProvider,
+        IDbContextFactory<NetStreamDbContext> dbProvider,
         IItemQueryHelpers queryHelpers,
         IServerConfigurationManager serverConfigurationManager,
         ILibraryManager libraryManager)
@@ -237,7 +237,7 @@ public sealed class MovieSimilarItemsProvider : ILocalSimilarItemsProvider<Movie
         }
     }
 
-    private static async Task<Dictionary<Guid, Dictionary<Guid, int>>> ComputeBatchScoresAsync(List<Guid> sourceIds, JellyfinDbContext context, CancellationToken cancellationToken)
+    private static async Task<Dictionary<Guid, Dictionary<Guid, int>>> ComputeBatchScoresAsync(List<Guid> sourceIds, NetStreamDbContext context, CancellationToken cancellationToken)
     {
         var result = new Dictionary<Guid, Dictionary<Guid, int>>();
         foreach (var id in sourceIds)

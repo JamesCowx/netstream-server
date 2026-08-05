@@ -1,5 +1,5 @@
 using System;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 
 namespace MediaBrowser.Controller.Library;
 

@@ -5,9 +5,9 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations.Enums;
-using AccessSchedule = Jellyfin.Database.Implementations.Entities.AccessSchedule;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations.Enums;
+using AccessSchedule = NetStream.Database.Implementations.Entities.AccessSchedule;
 
 namespace MediaBrowser.Model.Users
 {

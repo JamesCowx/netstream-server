@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 
 namespace MediaBrowser.Model.Extensions;
 

@@ -9,14 +9,14 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MediaBrowser.Controller")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Jellyfin Project")]
-[assembly: AssemblyProduct("Jellyfin Server")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Jellyfin Contributors. Code released under the GNU General Public License")]
+[assembly: AssemblyCompany("NetStream Project")]
+[assembly: AssemblyProduct("NetStream Server")]
+[assembly: AssemblyCopyright("Copyright ©  2019 NetStream Contributors. Code released under the GNU General Public License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: NeutralResourcesLanguage("en")]
-[assembly: InternalsVisibleTo("Jellyfin.Controller.Tests")]
-[assembly: InternalsVisibleTo("Jellyfin.Server.Implementations.Tests")]
+[assembly: InternalsVisibleTo("NetStream.Controller.Tests")]
+[assembly: InternalsVisibleTo("NetStream.Server.Implementations.Tests")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

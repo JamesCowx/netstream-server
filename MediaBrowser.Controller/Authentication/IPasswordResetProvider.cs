@@ -2,7 +2,7 @@
 
 using System;
 using System.Threading.Tasks;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Model.Users;
 
 namespace MediaBrowser.Controller.Authentication

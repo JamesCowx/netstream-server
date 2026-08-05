@@ -2,7 +2,7 @@
 #pragma warning disable CS1591
 
 using System;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;

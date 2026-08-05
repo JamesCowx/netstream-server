@@ -3,10 +3,10 @@ using System.IO;
 using System.Threading.Tasks;
 using MediaBrowser.Controller.SystemBackupService;
 
-namespace Jellyfin.Server.Implementations.SystemBackupService;
+namespace NetStream.Server.Implementations.SystemBackupService;
 
 /// <summary>
-/// Defines an interface to restore and backup the jellyfin system.
+/// Defines an interface to restore and backup the netstream system.
 /// </summary>
 public interface IBackupService
 {
@@ -24,14 +24,14 @@ public interface IBackupService
     Task<BackupManifestDto[]> EnumerateBackups();
 
     /// <summary>
-    /// Gets a single backup manifest if the path defines a valid Jellyfin backup archive.
+    /// Gets a single backup manifest if the path defines a valid NetStream backup archive.
     /// </summary>
     /// <param name="archivePath">The path to be loaded.</param>
     /// <returns>The containing backup manifest or null if not existing or compatiable.</returns>
     Task<BackupManifestDto?> GetBackupManifest(string archivePath);
 
     /// <summary>
-    /// Restores an backup zip file created by jellyfin.
+    /// Restores an backup zip file created by netstream.
     /// </summary>
     /// <param name="archivePath">Path to the archive.</param>
     /// <returns>A Task.</returns>

@@ -32,7 +32,7 @@ namespace Emby.Server.Implementations.Library
             "**/sample/*",
 
             // Avoid adding Hungarian sample files
-            // https://github.com/jellyfin/jellyfin/issues/16237
+            // https://github.com/netstream/netstream/issues/16237
             "**/minta.?",
             "**/minta.??",
             "**/minta.???", // Matches minta.mkv

@@ -18,7 +18,7 @@ public class JsonWriter : SubtitleFormat
     public override string Extension => ".json";
 
     /// <inheritdoc />
-    public override string Name => "JSON Jellyfin";
+    public override string Name => "JSON NetStream";
 
     /// <inheritdoc />
     public override string ToText(Subtitle subtitle, string title)

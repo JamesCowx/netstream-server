@@ -13,11 +13,11 @@ jobs:
   prs-stale-conflicts:
     name: Check PRs with merge conflicts
     runs-on: ubuntu-latest
-    if: ${{ contains(github.repository, 'jellyfin/') }}
+    if: ${{ contains(github.repository, 'netstream/') }}
     steps:
       - uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
         with:
-          repo-token: ${{ secrets.JF_BOT_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           ascending: true
           operations-per-run: 150
           # The merge conflict action will remove the label when updated

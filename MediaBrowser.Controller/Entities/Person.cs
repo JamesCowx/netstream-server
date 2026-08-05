@@ -5,8 +5,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Extensions;
+using NetStream.Database.Implementations.Entities;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Providers;
 using Microsoft.Extensions.Logging;
 

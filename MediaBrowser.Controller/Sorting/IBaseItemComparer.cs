@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 using MediaBrowser.Controller.Entities;
 
 namespace MediaBrowser.Controller.Sorting

@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Jellyfin.Database.Implementations;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Database.Implementations;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Controller.Entities;
 
 namespace MediaBrowser.Controller.Persistence;
@@ -22,7 +22,7 @@ public interface IItemQueryHelpers
     /// <returns>The filtered queryable.</returns>
     IQueryable<BaseItemEntity> TranslateQuery(
         IQueryable<BaseItemEntity> baseQuery,
-        JellyfinDbContext context,
+        NetStreamDbContext context,
         InternalItemsQuery filter);
 
     /// <summary>
@@ -31,7 +31,7 @@ public interface IItemQueryHelpers
     /// <param name="context">The database context.</param>
     /// <param name="filter">The query filter.</param>
     /// <returns>The prepared queryable.</returns>
-    IQueryable<BaseItemEntity> PrepareItemQuery(JellyfinDbContext context, InternalItemsQuery filter);
+    IQueryable<BaseItemEntity> PrepareItemQuery(NetStreamDbContext context, InternalItemsQuery filter);
 
     /// <summary>
     /// Applies user access filtering (library access, parental controls, tags) to a query.
@@ -41,7 +41,7 @@ public interface IItemQueryHelpers
     /// <param name="filter">The query filter containing access settings.</param>
     /// <returns>The access-filtered queryable.</returns>
     IQueryable<BaseItemEntity> ApplyAccessFiltering(
-        JellyfinDbContext context,
+        NetStreamDbContext context,
         IQueryable<BaseItemEntity> baseQuery,
         InternalItemsQuery filter);
 
@@ -65,7 +65,7 @@ public interface IItemQueryHelpers
     IQueryable<BaseItemEntity> ApplyOrder(
         IQueryable<BaseItemEntity> query,
         InternalItemsQuery filter,
-        JellyfinDbContext context);
+        NetStreamDbContext context);
 
     /// <summary>
     /// Builds a query for descendants of an ancestor with user access filtering applied.
@@ -75,7 +75,7 @@ public interface IItemQueryHelpers
     /// <param name="ancestorId">The ancestor item ID.</param>
     /// <returns>The filtered descendant queryable.</returns>
     IQueryable<BaseItemEntity> BuildAccessFilteredDescendantsQuery(
-        JellyfinDbContext context,
+        NetStreamDbContext context,
         InternalItemsQuery filter,
         Guid ancestorId);
 
@@ -87,7 +87,7 @@ public interface IItemQueryHelpers
     /// <param name="includeOwnedItems">Whether to include alternate versions and owned items.</param>
     /// <returns>The access-filtered leaf item queryable.</returns>
     IQueryable<BaseItemEntity> GetAccessFilteredLeafItemsQuery(
-        JellyfinDbContext context,
+        NetStreamDbContext context,
         User user,
         bool includeOwnedItems = false);
 
@@ -98,7 +98,7 @@ public interface IItemQueryHelpers
     /// <param name="descendants">A query yielding the descendants to look for.</param>
     /// <returns>A filter expression matching items with a matching descendant.</returns>
     Expression<Func<BaseItemEntity, bool>> BuildHasDescendantFilter(
-        JellyfinDbContext context,
+        NetStreamDbContext context,
         IQueryable<BaseItemEntity> descendants);
 
     /// <summary>

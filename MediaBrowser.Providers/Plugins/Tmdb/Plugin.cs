@@ -43,10 +43,10 @@ namespace MediaBrowser.Providers.Plugins.Tmdb
         // TODO remove when plugin removed from server.
 
         /// <inheritdoc/>
-        public override string ConfigurationFileName => "Jellyfin.Plugin.Tmdb.xml";
+        public override string ConfigurationFileName => "NetStream.Plugin.Tmdb.xml";
 
         /// <inheritdoc/>
-        public string ImageResourceName => GetType().Namespace + ".jellyfin-plugin-tmdb.svg";
+        public string ImageResourceName => GetType().Namespace + ".netstream-plugin-tmdb.svg";
 
         /// <summary>
         /// Return the plugin configuration page.

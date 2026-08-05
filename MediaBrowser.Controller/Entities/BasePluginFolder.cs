@@ -1,7 +1,7 @@
 #pragma warning disable CS1591
 
 using System.Text.Json.Serialization;
-using Jellyfin.Data.Enums;
+using NetStream.Data.Enums;
 
 namespace MediaBrowser.Controller.Entities
 {

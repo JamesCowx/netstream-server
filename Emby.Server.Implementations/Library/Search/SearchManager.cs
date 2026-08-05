@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations;
-using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Extensions;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations;
+using NetStream.Database.Implementations.Entities;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Dto;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
@@ -25,7 +25,7 @@ public class SearchManager : ISearchManager
 {
     private readonly ILibraryManager _libraryManager;
     private readonly IUserManager _userManager;
-    private readonly IDbContextFactory<JellyfinDbContext> _dbProvider;
+    private readonly IDbContextFactory<NetStreamDbContext> _dbProvider;
     private readonly IItemQueryHelpers _queryHelpers;
     private readonly ILogger<SearchManager> _logger;
     private IExternalSearchProvider[] _externalProviders = [];
@@ -42,7 +42,7 @@ public class SearchManager : ISearchManager
     public SearchManager(
         ILibraryManager libraryManager,
         IUserManager userManager,
-        IDbContextFactory<JellyfinDbContext> dbProvider,
+        IDbContextFactory<NetStreamDbContext> dbProvider,
         IItemQueryHelpers queryHelpers,
         ILogger<SearchManager> logger)
     {

@@ -4,7 +4,7 @@
 
 using System;
 using System.Linq;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Model.Providers;
 

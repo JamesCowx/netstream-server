@@ -7,8 +7,8 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using System.Text.Json.Serialization;
-using Jellyfin.Data.Enums;
-using Jellyfin.Extensions;
+using NetStream.Data.Enums;
+using NetStream.Extensions;
 using MediaBrowser.Model.Dlna;
 using MediaBrowser.Model.Extensions;
 using MediaBrowser.Model.MediaInfo;
@@ -548,7 +548,7 @@ namespace MediaBrowser.Model.Entities
             {
                 // In some cases AverageFrameRate for videos will be read as 1000fps even if it is not.
                 // This is probably due to a library compatibility issue.
-                // See https://github.com/jellyfin/jellyfin/pull/12603#discussion_r1748044018 for more info.
+                // See https://github.com/netstream/netstream/pull/12603#discussion_r1748044018 for more info.
                 return AverageFrameRate < 1000 ? AverageFrameRate : RealFrameRate;
             }
         }

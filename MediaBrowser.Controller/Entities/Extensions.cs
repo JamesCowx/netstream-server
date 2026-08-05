@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 using MediaBrowser.Model.Entities;
 
 namespace MediaBrowser.Controller.Entities

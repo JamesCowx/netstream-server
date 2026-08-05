@@ -6,10 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations;
-using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Extensions;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations;
+using NetStream.Database.Implementations.Entities;
+using NetStream.Extensions;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Persistence;
@@ -31,7 +31,7 @@ public class SqlSearchProvider : IInternalSearchProvider
 
     private static readonly Guid _placeholderId = Guid.Parse("00000000-0000-0000-0000-000000000001");
 
-    private readonly IDbContextFactory<JellyfinDbContext> _dbProvider;
+    private readonly IDbContextFactory<NetStreamDbContext> _dbProvider;
     private readonly IItemTypeLookup _itemTypeLookup;
     private readonly ILibraryManager _libraryManager;
     private readonly IUserManager _userManager;
@@ -46,7 +46,7 @@ public class SqlSearchProvider : IInternalSearchProvider
     /// <param name="userManager">The user manager.</param>
     /// <param name="queryHelpers">The shared item query helpers.</param>
     public SqlSearchProvider(
-        IDbContextFactory<JellyfinDbContext> dbProvider,
+        IDbContextFactory<NetStreamDbContext> dbProvider,
         IItemTypeLookup itemTypeLookup,
         ILibraryManager libraryManager,
         IUserManager userManager,
@@ -194,7 +194,7 @@ public class SqlSearchProvider : IInternalSearchProvider
     }
 
     private IQueryable<BaseItemEntity> ApplyUserAccessFilter(
-        JellyfinDbContext dbContext,
+        NetStreamDbContext dbContext,
         IQueryable<BaseItemEntity> query,
         Guid? userId)
     {

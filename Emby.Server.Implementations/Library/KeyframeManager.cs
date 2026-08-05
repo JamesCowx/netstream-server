@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Jellyfin.MediaEncoding.Keyframes;
+using NetStream.MediaEncoding.Keyframes;
 using MediaBrowser.Controller.IO;
 using MediaBrowser.Controller.Persistence;
 

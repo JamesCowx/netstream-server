@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.Json.Serialization;
-using Jellyfin.Data;
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Database.Implementations.Enums;
+using NetStream.Data;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations.Entities;
+using NetStream.Database.Implementations.Enums;
 using MediaBrowser.Controller.Providers;
 using MediaBrowser.Model.Querying;
 

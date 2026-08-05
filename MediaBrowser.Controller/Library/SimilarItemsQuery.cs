@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Controller.Dto;
 
 namespace MediaBrowser.Controller.Library;

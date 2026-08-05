@@ -1,4 +1,4 @@
-# Jellyfin fuzzing
+# NetStream fuzzing
 
 ## Setup
 

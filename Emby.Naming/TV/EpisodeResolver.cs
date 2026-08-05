@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Emby.Naming.Common;
 using Emby.Naming.Video;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 
 namespace Emby.Naming.TV
 {

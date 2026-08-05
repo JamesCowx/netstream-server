@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Emby.Naming.Common;
-using Jellyfin.Extensions;
+using NetStream.Extensions;
 using MediaBrowser.Model.Dlna;
 using MediaBrowser.Model.Globalization;
 

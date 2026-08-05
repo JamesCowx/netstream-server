@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
-using Jellyfin.Data.Events;
-using Jellyfin.Data.Queries;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Data.Events;
+using NetStream.Data.Queries;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Model.Querying;
 
 namespace MediaBrowser.Model.Activity;

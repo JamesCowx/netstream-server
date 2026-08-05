@@ -1,7 +1,7 @@
 #nullable disable
 
-using Jellyfin.Data.Enums;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Data.Enums;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Sorting;

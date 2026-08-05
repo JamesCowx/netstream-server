@@ -19,7 +19,7 @@ namespace MediaBrowser.Providers.Plugins.StudioImages
         /// <summary>
         /// Artwork repository URL.
         /// </summary>
-        public const string DefaultServer = "https://raw.githubusercontent.com/jellyfin/emby-artwork/master/studios";
+        public const string DefaultServer = "https://raw.githubusercontent.com/netstream/emby-artwork/master/studios";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Plugin"/> class.
@@ -44,15 +44,15 @@ namespace MediaBrowser.Providers.Plugins.StudioImages
         public override string Name => "Studio Images";
 
         /// <inheritdoc/>
-        public override string Description => "Get artwork for studios from any Jellyfin-compatible repository.";
+        public override string Description => "Get artwork for studios from any NetStream-compatible repository.";
 
         // TODO remove when plugin removed from server.
 
         /// <inheritdoc/>
-        public override string ConfigurationFileName => "Jellyfin.Plugin.StudioImages.xml";
+        public override string ConfigurationFileName => "NetStream.Plugin.StudioImages.xml";
 
         /// <inheritdoc/>
-        public string ImageResourceName => GetType().Namespace + ".jellyfin-plugin-studioimages.svg";
+        public string ImageResourceName => GetType().Namespace + ".netstream-plugin-studioimages.svg";
 
         /// <inheritdoc/>
         public IEnumerable<PluginPageInfo> GetPages()

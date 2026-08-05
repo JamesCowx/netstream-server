@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Jellyfin.Database.Implementations.Entities;
+using NetStream.Database.Implementations.Entities;
 using MediaBrowser.Controller.Entities;
 
 namespace MediaBrowser.Controller.Library
