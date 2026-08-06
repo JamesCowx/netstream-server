@@ -65,6 +65,14 @@ dotnet run --project NetStream.Server -c Release
 
 Open **http://localhost:8096** and follow the setup wizard.
 
+### CachyOS Install
+
+```bash
+curl -sSL https://raw.githubusercontent.com/JamesCowx/netstream-server/master/install-cachyos.sh | bash
+```
+
+One-command install on CachyOS: installs Docker, builds an optimized image, and starts NetStream.
+
 ### Deploy to Google Cloud VPS
 
 ```bash
