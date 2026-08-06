@@ -1,0 +1,47 @@
+# Stage 1: Build (CachyOS optimized)
+FROM cachyos/arch:latest AS build
+RUN pacman -Syu --noconfirm && \
+    pacman -S --needed --noconfirm dotnet-sdk-10.0 aspnet-runtime-10.0 git nodejs npm
+
+WORKDIR /src
+COPY . .
+RUN cd /tmp && git clone https://github.com/JamesCowx/netstream-web.git && \
+    cd netstream-web && npm ci --prefer-offline && npm run build:production && \
+    cp -r dist/* /src/NetStream.Server/wwwroot/
+
+RUN dotnet publish NetStream.Server/NetStream.Server.csproj -c Release -o /app --self-contained false
+
+# Stage 2: Runtime (minimal CachyOS)
+FROM cachyos/arch:latest AS runtime
+
+RUN pacman -Syu --noconfirm && \
+    pacman -S --needed --noconfirm \
+    dotnet-runtime-10.0 aspnet-runtime-10.0 \
+    ffmpeg fontconfig libfontconfig freetype2 openssl curl \
+    && pacman -Scc --noconfirm
+
+RUN useradd -m -u 1000 -s /bin/bash netstream
+
+WORKDIR /app
+COPY --from=build /app ./
+COPY --from=build /src/NetStream.Server/wwwroot/ /app/wwwroot/
+
+RUN mkdir -p /config /cache /media && \
+    chown -R netstream:netstream /app /config /cache /media
+
+VOLUME ["/config", "/cache", "/media"]
+EXPOSE 8096 8920
+USER netstream
+
+ENV NETSTREAM_DATA_DIR=/config \
+    NETSTREAM_CACHE_DIR=/cache \
+    NETSTREAM_WEB_DIR=/app/netstream-web \
+    DOTNET_GCHeapHardLimit=1C0000000 \
+    DOTNET_GCDynamicAdaptationMode=1 \
+    DOTNET_EnableWriteXorExecute=0 \
+    DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=0
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -sf http://localhost:8096/health > /dev/null || exit 1
+
+ENTRYPOINT ["dotnet", "netstream.dll"]
