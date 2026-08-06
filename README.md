@@ -1,181 +1,115 @@
-<h1 align="center">NetStream</h1>
+<h1 align="center">
+  <br>
+  <img src="NetStream.Server/wwwroot/api-docs/netstream.svg" alt="NetStream" width="420">
+  <br>
+  <br>
+</h1>
+
 <h3 align="center">The Free Software Media System</h3>
 
----
-
 <p align="center">
-<img alt="Logo Banner" src="https://raw.githubusercontent.com/netstream/netstream-ux/master/branding/SVG/banner-logo-solid.svg?sanitize=true"/>
-<br/>
-<br/>
-<a href="https://github.com/netstream/netstream"><img alt="GPL 2.0 License" src="https://img.shields.io/github/license/netstream/netstream.svg"/></a>
-<a href="https://github.com/netstream/netstream/releases"><img alt="Current Release" src="https://img.shields.io/github/release/netstream/netstream.svg"/></a>
-<a href="https://translate.netstream.org/projects/netstream/netstream-core/?utm_source=widget"><img alt="Translation Status" src="https://translate.netstream.org/widgets/netstream/-/netstream-core/svg-badge.svg"/></a>
-<a href="https://hub.docker.com/r/netstream/netstream"><img alt="Docker Pull Count" src="https://img.shields.io/docker/pulls/netstream/netstream.svg"/></a>
-<br/>
-<a href="https://opencollective.com/netstream"><img alt="Donate" src="https://img.shields.io/opencollective/all/netstream.svg?label=backers"/></a>
-<a href="https://features.netstream.org"><img alt="Submit Feature Requests" src="https://img.shields.io/badge/fider-vote%20on%20features-success.svg"/></a>
-<a href="https://matrix.to/#/#netstreamorg:matrix.org"><img alt="Chat on Matrix" src="https://img.shields.io/matrix/netstreamorg:matrix.org.svg?logo=matrix"/></a>
-<a href="https://github.com/netstream/netstream/releases.atom"><img alt="Release RSS Feed" src="https://img.shields.io/badge/rss-releases-ffa500?logo=rss" /></a>
-<a href="https://github.com/netstream/netstream/commits/master.atom"><img alt="Master Commits RSS Feed" src="https://img.shields.io/badge/rss-commits-ffa500?logo=rss" /></a>
+  <a href="https://github.com/JamesCowx/netstream-server/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/JamesCowx/netstream-server?color=7c3aed"></a>
+  <a href="https://github.com/JamesCowx/netstream-server/actions/workflows/ci-tests.yml"><img alt="Build" src="https://github.com/JamesCowx/netstream-server/actions/workflows/ci-tests.yml/badge.svg"></a>
+  <a href="https://github.com/JamesCowx/netstream-server/actions/workflows/ci-format.yml"><img alt="Format" src="https://github.com/JamesCowx/netstream-server/actions/workflows/ci-format.yml/badge.svg"></a>
+  <img alt="Platforms" src="https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-blueviolet">
+  <img alt=".NET" src="https://img.shields.io/badge/.NET-10.0-%23512bd4">
 </p>
 
 ---
 
-NetStream is a Free Software Media System that puts you in control of managing and streaming your media. It is an alternative to the proprietary Emby and Plex, to provide media from a dedicated server to end-user devices via multiple apps. NetStream is descended from Emby's 3.5.2 release and ported to the .NET platform to enable full cross-platform support.
-
-There are no strings attached, no premium licenses or features, and no hidden agendas: just a team that wants to build something better and work together to achieve it. We welcome anyone who is interested in joining us in our quest!
-
-For further details, please see [our documentation page](https://netstream.org/docs/). To receive the latest updates, get help with NetStream, and join the community, please visit [one of our communication channels](https://netstream.org/docs/general/getting-help). For more information about the project, please see our [about page](https://netstream.org/docs/general/about).
-
-<strong>Want to get started?</strong><br/>
-Check out our <a href="https://netstream.org/downloads">downloads page</a> or our <a href="https://netstream.org/docs/general/installation/">installation guide</a>, then see our <a href="https://netstream.org/docs/general/quick-start">quick start guide</a>. You can also <a href="https://netstream.org/docs/general/installation/source">build from source</a>.<br/>
-
-<strong>Something not working right?</strong><br/>
-Open an <a href="https://netstream.org/docs/general/contributing/issues">Issue</a> on GitHub.<br/>
-
-<strong>Want to contribute?</strong><br/>
-Check out our <a href="https://netstream.org/contribute">contributing choose-your-own-adventure</a> to see where you can help, then see our <a href="https://netstream.org/docs/general/contributing/">contributing guide</a> and our <a href="https://netstream.org/docs/general/community-standards">community standards</a>.<br/>
-
-<strong>New idea or improvement?</strong><br/>
-Check out our <a href="https://features.netstream.org/?view=most-wanted">feature request hub</a>.<br/>
-
-<strong>Don't see NetStream in your language?</strong><br/>
-Check out our <a href="https://translate.netstream.org">Weblate instance</a> to help translate NetStream and its subprojects.<br/>
-
-<a href="https://translate.netstream.org/engage/netstream/?utm_source=widget">
-<img src="https://translate.netstream.org/widgets/netstream/-/netstream-web/multi-auto.svg" alt="Detailed Translation Status"/>
-</a>
+NetStream is a **free and open-source** media server that puts you in control of managing and streaming your media. No strings attached, no premium licenses — just a powerful, self-hosted alternative to proprietary platforms.
 
 ---
 
-## NetStream Server
+## Features
 
-This repository contains the code for NetStream's backend server. Note that this is only one of many projects under the NetStream GitHub [organization](https://github.com/netstream/) on GitHub. If you want to contribute, you can start by checking out our [documentation](https://netstream.org/docs/general/contributing/index.html) to see what to work on.
+- **Live TV** — Watch and record live television with DVR support
+- **Hardware Acceleration** — Transcode media using VAAPI, NVENC, QSV, and more
+- **Plugin System** — Extend functionality with a rich plugin ecosystem
+- **Multi-User** — Create accounts for family and friends with fine-grained permissions
+- **SyncPlay** — Watch content together in real-time with remote users
+- **Metadata Management** — Automatic fetching of posters, art, and metadata
+- **DLNA Support** — Stream to any DLNA-compatible device
+- **Cross-Platform** — Runs on Windows, macOS, Linux, and Docker
 
-## Server Development
+## Quick Start
 
-These instructions will help you get set up with a local development environment in order to contribute to this repository. Before you start, please be sure to completely read our [guidelines on development contributions](https://netstream.org/docs/general/contributing/development.html). Note that this project is supported on all major operating systems except FreeBSD, which is still incompatible.
-
-### Prerequisites
-
-Before the project can be built, you must first install the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet) on your system.
-
-Instructions to run this project from the command line are included here, but you will also need to install an IDE if you want to debug the server while it is running. Any IDE that supports .NET 6 development will work, but two options are recent versions of [Visual Studio](https://visualstudio.microsoft.com/downloads/) (at least 2022) and [Visual Studio Code](https://code.visualstudio.com/Download).
-
-[ffmpeg](https://github.com/netstream/netstream-ffmpeg) will also need to be installed.
-
-### Cloning the Repository
-
-After dependencies have been installed you will need to clone a local copy of this repository. If you just want to run the server from source you can clone this repository directly, but if you are intending to contribute code changes to the project, you should [set up your own fork](https://netstream.org/docs/general/contributing/development.html#set-up-your-copy-of-the-repo) of the repository. The following example shows how you can clone the repository directly over HTTPS.
+### Run with Docker
 
 ```bash
-git clone https://github.com/netstream/netstream.git
+docker run -d \
+  --name netstream \
+  -p 8096:8096 \
+  -v /path/to/config:/config \
+  -v /path/to/media:/media:ro \
+  netstream/netstream:latest
 ```
 
-### Installing the Web Client
+### Build from Source
 
-The server is configured to host the static files required for the [web client](https://github.com/netstream/netstream-web) in addition to serving the backend by default. Before you can run the server, you will need to get a copy of the web client since they are not included in this repository directly.
-
-Note that it is recommended for development to [host the web client separately](#hosting-the-web-client-separately) from the web server with some additional configuration, in which case you can skip this step.
-
-There are two options to get the files for the web client.
-
-1. Build them from source following the instructions on the [netstream-web repository](https://github.com/netstream/netstream-web)
-2. Get the pre-built files from an existing installation of the server. For example, with a Windows server installation the client files are located at `C:\Program Files\NetStream\Server\netstream-web`
-
-### Running The Server
-
-The following instructions will help you get the project up and running via the command line, or your preferred IDE.
-
-#### Running With Visual Studio
-
-To run the project with Visual Studio you can open the Solution (`.sln`) file and then press `F5` to run the server.
-
-#### Running With Visual Studio Code
-
-To run the project with Visual Studio Code you will first need to open the repository directory with Visual Studio Code using the `Open Folder...` option.
-
-Second, you need to [install the recommended extensions for the workspace](https://code.visualstudio.com/docs/editor/extension-gallery#_recommended-extensions). Note that extension recommendations are classified as either "Workspace Recommendations" or "Other Recommendations", but only the "Workspace Recommendations" are required.
-
-After the required extensions are installed, you can run the server by pressing `F5`.
-
-#### Running From the Command Line
-
-To run the server from the command line you can use the `dotnet run` command. The example below shows how to do this if you have cloned the repository into a directory named `netstream` (the default directory name) and should work on all operating systems.
+**Prerequisites:** [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ```bash
-cd netstream                          # Move into the repository directory
-dotnet run --project NetStream.Server --webdir /absolute/path/to/netstream-web/dist # Run the server startup project
+# Clone the repo
+git clone https://github.com/JamesCowx/netstream-server.git
+cd netstream-server
+
+# Clone and build the web client
+git clone https://github.com/JamesCowx/netstream-web.git ../netstream-web
+cd ../netstream-web && npm ci && npm run build:production && cd ../netstream-server
+cp -r ../netstream-web/dist/* NetStream.Server/wwwroot/
+
+# Run
+dotnet run --project NetStream.Server -c Release
 ```
 
-A second option is to build the project and then run the resulting executable file directly. When running the executable directly you can easily add command line options. Add the `--help` flag to list details on all the supported command line options.
+Open **http://localhost:8096** and follow the setup wizard.
 
-1. Build the project
+### Deploy to Google Cloud VPS
 
 ```bash
-dotnet build                       # Build the project
-cd NetStream.Server/bin/Debug/net10.0 # Change into the build output directory
+curl -sSL https://raw.githubusercontent.com/JamesCowx/netstream-server/master/deploy-gcp.sh | bash
 ```
 
-2. Execute the build output. On Linux, Mac, etc. use `./netstream` and on Windows use `netstream.exe`.
+## Project Structure
 
-#### Accessing the Hosted Web Client
+```
+netstream-server/
+├── NetStream.Server/              # Main server entry point
+├── NetStream.Api/                 # REST API controllers
+├── NetStream.Data/                # Data access layer
+├── NetStream.Server.Implementations/  # Core server logic
+├── MediaBrowser.Controller/       # Media library management
+├── MediaBrowser.Providers/        # Metadata providers
+├── Emby.Naming/                   # File naming conventions
+├── src/
+│   ├── NetStream.Database/        # Database providers (SQLite)
+│   ├── NetStream.Drawing/         # Image processing
+│   ├── NetStream.LiveTv/          # Live TV & DVR
+│   ├── NetStream.MediaEncoding/   # Transcoding pipeline
+│   └── NetStream.Networking/      # Network utilities
+├── tests/                         # Unit & integration tests
+├── Dockerfile                     # Multi-stage Docker build
+├── docker-compose.yml             # Docker Compose config
+└── deploy-gcp.sh                  # GCP one-click deploy
+```
 
-If the Server is configured to host the Web Client, and the Server is running, the Web Client can be accessed at `http://localhost:8096` by default.
+## Contributing
 
-API documentation can be viewed at `http://localhost:8096/api-docs/swagger/index.html`
+We welcome contributions of all kinds — bug fixes, features, documentation, and translations.
 
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Running from GitHub Codespaces
+## License
 
-As NetStream will run on a container on a GitHub hosted server, JF needs to handle some things differently.
-
-**NOTE:** Depending on the selected configuration (if you just click 'create codespace' it will create a default configuration one) it might take 20-30 seconds to load all extensions and prepare the environment while VS Code is already open. Just give it some time and wait until you see `Downloading .NET version(s) 7.0.15~x64 ...... Done!` in the output tab.
-
-**NOTE:** If you want to access the JF instance from outside, like with a WebClient on another PC, remember to set the "ports" in the lower VS Code window to public.
-
-**NOTE:** When first opening the server instance with any WebUI, you will be sent to the login instead of the setup page. Refresh the login page once and you should be redirected to the Setup.
-
-There are two configurations for you to choose from.
-#### Default - Development NetStream Server
-This creates a container that has everything to run and debug the NetStream Media server but does not setup anything else. Each time you create a new container you have to run through the whole setup again. There is also no ffmpeg, webclient or media preloaded. Use the `.NET Launch (nowebclient)` launch config to start the server.
-
-> Keep in mind that as this has no web client you have to connect to it via an external client. This can be just another codespace container running the WebUI. vuejs does not work from the get-go as it does not support the setup steps.
-
-#### Development NetStream Server ffmpeg
-this extends the default server with a default installation of ffmpeg6 though the means described here: https://netstream.org/docs/general/installation/linux#repository-manual
-If you want to install a specific ffmpeg version, follow the comments embedded in the `.devcontainer/Dev - Server Ffmpeg/install.ffmpeg.sh` file.
-
-Use the `ghcs .NET Launch (nowebclient, ffmpeg)` launch config to run with the netstream-ffmpeg enabled.
-
-
-### Running The Tests
-
-This repository also includes unit tests that are used to validate functionality as part of a CI pipeline on Azure. There are several ways to run these tests.
-
-1. Run tests from the command line using `dotnet test`
-2. Run tests in Visual Studio using the [Test Explorer](https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer)
-3. Run individual tests in Visual Studio Code using the associated [CodeLens annotation](https://github.com/OmniSharp/omnisharp-vscode/wiki/How-to-run-and-debug-unit-tests)
-
-### Advanced Configuration
-
-The following sections describe some more advanced scenarios for running the server from source that build upon the standard instructions above.
-
-#### Hosting The Web Client Separately
-
-It is not necessary to host the frontend web client as part of the backend server. Hosting these two components separately may be useful for frontend developers who would prefer to host the client in a separate webpack development server for a tighter development loop. See the [netstream-web](https://github.com/netstream/netstream-web#getting-started) repo for instructions on how to do this.
-
-To instruct the server not to host the web content, there is a `nowebclient` configuration flag that must be set. This can be specified using the command line
-switch `--nowebclient` or the environment variable `NETSTREAM_NOWEBCONTENT=true`.
-
-Since this is a common scenario, there is also a separate launch profile defined for Visual Studio called `NetStream.Server (nowebcontent)` that can be selected from the 'Start Debugging' dropdown in the main toolbar.
-
-**NOTE:** The setup wizard cannot be run if the web client is hosted separately.
+NetStream is licensed under the [GNU General Public License v2.0](LICENSE).
 
 ---
+
 <p align="center">
-This project is supported by:
-<br/>
-<br/>
-<a href="https://www.jetbrains.com"><img src="https://gist.githubusercontent.com/anthonylavado/e8b2403deee9581e0b4cb8cd675af7db/raw/199ae22980ef5da64882ec2de3e8e5c03fe535b8/jetbrains.svg" height="50px" alt="JetBrains logo"></a>
+  <sub>Built with care by the open-source community</sub>
 </p>
