@@ -1,19 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
   <defs>
-    <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#00c6ff"/>
-      <stop offset="50%" stop-color="#0072ff"/>
-      <stop offset="100%" stop-color="#6c3ce0"/>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="45%" stop-color="#0090ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
     </linearGradient>
+    <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="glow1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="16" result="blur2"/>
+      <feMerge><feMergeNode in="blur2"/><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow2" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="0.8" fill="#ffffff" opacity="0.04"/>
+    </pattern>
+    <radialGradient id="bgGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <circle cx="256" cy="216" r="128" stroke="url(#fg)" stroke-width="14" fill="none" opacity="0.5"/>
-  <circle cx="256" cy="216" r="72" stroke="url(#fg)" stroke-width="10" fill="none" opacity="0.35"/>
-  <circle cx="256" cy="216" r="28" fill="url(#fg)"/>
-  <circle cx="256" cy="88" r="12" fill="#00c6ff" opacity="0.7"/>
-  <circle cx="370" cy="168" r="10" fill="#6c3ce0" opacity="0.7"/>
-  <circle cx="142" cy="304" r="12" fill="#0072ff" opacity="0.7"/>
-  <g transform="translate(160, 380)">
-    <rect x="0" y="0" width="192" height="48" rx="8" fill="url(#fg)" opacity="0.9"/>
-    <text x="96" y="33" font-family="'Segoe UI',Arial,sans-serif" font-weight="800" font-size="24" text-anchor="middle" fill="#fff">NetStream</text>
-  </g>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="24" fill="#080810"/>
+  <rect width="512" height="512" rx="24" fill="url(#grid)"/>
+  <rect width="512" height="512" rx="24" fill="url(#bgGrad)"/>
+
+  <!-- Ring effects -->
+  <circle cx="256" cy="200" r="130" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <circle cx="256" cy="200" r="90" stroke="url(#g2)" stroke-width="1" fill="none" opacity="0.25"/>
+  <circle cx="256" cy="200" r="60" stroke="url(#g1)" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="12 8 6 8" filter="url(#glow2)"/>
+
+  <!-- N mark -->
+  <line x1="210" y1="130" x2="210" y2="270" stroke="url(#g1)" stroke-width="7" stroke-linecap="round" filter="url(#glow2)"/>
+  <line x1="210" y1="130" x2="302" y2="270" stroke="url(#g1)" stroke-width="7" stroke-linecap="round" filter="url(#glow2)"/>
+  <line x1="302" y1="130" x2="302" y2="270" stroke="url(#g1)" stroke-width="7" stroke-linecap="round" filter="url(#glow2)"/>
+
+  <!-- Nodes -->
+  <circle cx="210" cy="130" r="8" fill="#00e5ff" filter="url(#glow1)"/>
+  <circle cx="210" cy="270" r="8" fill="#7c3aed" filter="url(#glow1)"/>
+  <circle cx="302" cy="130" r="6" fill="#0090ff" filter="url(#glow2)"/>
+  <circle cx="302" cy="270" r="6" fill="#00e5ff" filter="url(#glow2)"/>
+
+  <!-- Orbiting data nodes -->
+  <circle cx="256" cy="70" r="5" fill="#00e5ff" opacity="0.7" filter="url(#glow2)"/>
+  <circle cx="380" cy="150" r="4.5" fill="#7c3aed" opacity="0.6" filter="url(#glow2)"/>
+  <circle cx="358" cy="280" r="5" fill="#0090ff" opacity="0.7" filter="url(#glow2)"/>
+  <circle cx="256" cy="340" r="4.5" fill="#00e5ff" opacity="0.6" filter="url(#glow2)"/>
+  <circle cx="130" cy="150" r="4.5" fill="#7c3aed" opacity="0.6" filter="url(#glow2)"/>
+  <circle cx="150" cy="280" r="5" fill="#0090ff" opacity="0.7" filter="url(#glow2)"/>
+
+  <!-- Connection lines -->
+  <line x1="256" y1="200" x2="256" y2="75" stroke="#00e5ff" stroke-width="1" opacity="0.15"/>
+  <line x1="256" y1="200" x2="375" y2="154" stroke="#7c3aed" stroke-width="1" opacity="0.15"/>
+  <line x1="256" y1="200" x2="353" y2="276" stroke="#0090ff" stroke-width="1" opacity="0.15"/>
+  <line x1="256" y1="200" x2="256" y2="335" stroke="#00e5ff" stroke-width="1" opacity="0.15"/>
+  <line x1="256" y1="200" x2="134" y2="154" stroke="#7c3aed" stroke-width="1" opacity="0.15"/>
+  <line x1="256" y1="200" x2="155" y2="276" stroke="#0090ff" stroke-width="1" opacity="0.15"/>
+
+  <!-- Wordmark -->
+  <text x="256" y="428" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="52" letter-spacing="2">
+    <tspan fill="url(#g1)" filter="url(#glow2)">Net</tspan>
+  </text>
+  <text x="256" y="428" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="300" font-size="52" letter-spacing="3">
+    <tspan fill="#7c3aed" dx="95">Stream</tspan>
+  </text>
+
+  <!-- Accent bar -->
+  <rect x="140" y="456" width="232" height="3" rx="1.5" fill="url(#g1)" opacity="0.3" filter="url(#glow2)"/>
+  <circle cx="256" cy="457.5" r="5" fill="#00e5ff" opacity="0.5" filter="url(#glow1)"/>
 </svg>

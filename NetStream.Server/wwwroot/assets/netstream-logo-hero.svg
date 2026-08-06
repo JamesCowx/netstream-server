@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="fg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="50%" stop-color="#0090ff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="gl"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <circle cx="64" cy="52" r="38" stroke="url(#fg1)" stroke-width="2" fill="none" opacity="0.5"/>
+  <circle cx="64" cy="52" r="18" stroke="url(#fg1)" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="6 4"/>
+  <!-- N mark -->
+  <line x1="52" y1="28" x2="52" y2="76" stroke="url(#fg1)" stroke-width="3.5" stroke-linecap="round" filter="url(#gl)"/>
+  <line x1="52" y1="28" x2="76" y2="76" stroke="url(#fg1)" stroke-width="3.5" stroke-linecap="round" filter="url(#gl)"/>
+  <line x1="76" y1="28" x2="76" y2="76" stroke="url(#fg1)" stroke-width="3.5" stroke-linecap="round" filter="url(#gl)"/>
+  <!-- Nodes -->
+  <circle cx="52" cy="28" r="3" fill="#00e5ff"/>
+  <circle cx="52" cy="76" r="3" fill="#7c3aed"/>
+  <circle cx="76" cy="28" r="2.5" fill="#0090ff"/>
+  <circle cx="76" cy="76" r="2.5" fill="#00e5ff"/>
+  <line x1="64" y1="52" x2="90" cy="50" stroke="#00e5ff" stroke-width="0.5" opacity="0.15"/>
+  <circle cx="92" cy="50" r="1.5" fill="#00e5ff" opacity="0.6"/>
+  <circle cx="36" cy="50" r="1.5" fill="#7c3aed" opacity="0.6"/>
+</svg>
